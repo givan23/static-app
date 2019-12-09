@@ -1,0 +1,41 @@
+//color container
+@color-white: #FFFFFF;
+
+//color card 1
+@color-red:           #F08080;
+@color-rose:          #FF0000;
+
+//color card 2
+@color-blue:          #87CEFA;
+@color-light-blue:    #0000CD;
+
+//color card 3
+@color-green:         #90EE90;
+@color-light-green:   #228B22;
+
+//color card 4
+@color-violet:        #BA55D3;
+@color-light-violet:  #9400D3;
+
+@color-theme: @color-red, @color-rose, @color-blue, @color-light-blue, @color-green, @color-light-green, @color-violet, @color-light-violet;
+
+#lib-theme() {
+  @base: 150;
+}
+
+.animate {
+  //@a: .calc-perc(#lib-theme()[@base], 2);
+  @a: 200;
+  @f: @cento;
+  @d: .dividi(@b: @a)[@return];
+  @c: .dividi(@b: @f)[@return];
+
+  width: ~'@{a}px';
+  height: ~'@{a}px';
+  border-radius: ~'@{d}px';
+  position: absolute;
+  top: ~'@{c}%';
+  left: ~'@{c}%';
+  margin-top: ~'-@{d}px';
+  margin-left: ~'-@{d}px';
+}

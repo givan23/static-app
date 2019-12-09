@@ -1,0 +1,28 @@
+//@type-theme: 'theme-one';
+@theme-one: "theme-one";
+@theme-two: "theme-two";
+@type-theme: "theme-one";
+
+// VAR FOR CALC
+@due: 2;
+@dieci: 10;
+@cento: 100;
+
+#lib-common() {
+  @base: 100;
+}
+
+@import "tools.less";
+
+.extend() when ( @type-theme = @theme-one ) {
+  @import "theme-one";
+}
+
+.extend() when ( @type-theme = @theme-two ) {
+  @import "theme-two";
+}
+
+.extend();
+
+@import "elements-style.less";
+@import "clientlib";

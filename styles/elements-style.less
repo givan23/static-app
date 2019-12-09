@@ -1,0 +1,26 @@
+//mixin
+.rectangle-style {
+
+  @base-theme: #lib-theme()[@base];
+  @c: .calc-perc(@item-base: @base-theme, @dividendo: 2)[@return];
+  @r: .somma(@base-theme, @item-b: @c)[@return];
+  width: ~'@{r}px';
+  height: ~'@{r}px';
+  margin: 10px;
+  position: relative;
+}
+
+.circle-style {
+  @base-theme: #lib-theme()[@base];
+  @d: .dividi(@item-base: @base-theme)[@return];
+  @c: .dividi(@item-base: @cento)[@return];
+
+  width: ~'@{base-theme}px';
+  height: ~'@{base-theme}px';
+  border-radius: ~'@{d}px';
+  position: absolute;
+  top: ~'@{c}%';
+  left: ~'@{c}%';
+  margin-top: ~'-@{d}px';
+  margin-left: ~'-@{d}px';
+}
